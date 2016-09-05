@@ -1,0 +1,6 @@
+/* mag-component-value-list: release */
+.component.valueList {
+    border: 2px solid grey;
+    text-align: center; }
+    .component.valueList.focus {
+        border-color: orange; }

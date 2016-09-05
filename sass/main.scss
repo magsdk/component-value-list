@@ -1,0 +1,11 @@
+// @license The MIT License (MIT)
+// @copyright Stanislav Kalashnik <darkpark.main@gmail.com>
+
+/* mag-component-value-list: release */
+.component.valueList {
+    border: $inputBorder solid grey;
+    text-align: center;
+    &.focus {
+        border-color: orange;
+    }
+}
