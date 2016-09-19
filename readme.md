@@ -1,6 +1,7 @@
 Value list component
 ====================
 
+[![Build Status](https://img.shields.io/travis/magsdk/component-value-list.svg?style=flat-square)](https://travis-ci.org/magsdk/component-value-list)
 [![NPM version](https://img.shields.io/npm/v/mag-component-value-list.svg?style=flat-square)](https://www.npmjs.com/package/mag-component-value-list)
 [![Dependencies Status](https://img.shields.io/david/magsdk/component-value-list.svg?style=flat-square)](https://david-dm.org/magsdk/component-value-list)
 [![Gitter](https://img.shields.io/badge/gitter-join%20chat-blue.svg?style=flat-square)](https://gitter.im/DarkPark/magsdk)
