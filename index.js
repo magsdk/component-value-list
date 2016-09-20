@@ -8,7 +8,7 @@
 'use strict';
 
 var Component = require('stb-component'),
-    rc        = require('stb-rc');
+    keys      = require('stb-keys');
 
 /**
  * Value list implementation
@@ -155,10 +155,10 @@ ValueList.prototype.updateData = function () {
  */
 ValueList.prototype.defaultEvents = {
     keydown: function ( event ) {
-        switch ( event.keyCode ) {
-            case rc.codes.down:
-            case rc.codes.up:
-                this.change(event.keyCode);
+        switch ( event.code ) {
+            case keys.down:
+            case keys.up:
+                this.change(event.code);
                 break;
         }
     }
@@ -183,7 +183,7 @@ ValueList.prototype.defaultEvents = {
  */
 ValueList.prototype.change = function ( direction ) {
     switch ( direction ) {
-        case rc.codes.down:
+        case keys.down:
             if ( this.currentIndex + 1 < this.data.length ) {
                 this.currentIndex++;
                 this.current = this.data[this.currentIndex];
@@ -197,7 +197,7 @@ ValueList.prototype.change = function ( direction ) {
                 this.emit('overflow', {direction:direction, cycle:this.cycle});
             }
             break;
-        case rc.codes.up:
+        case keys.up:
             if ( this.currentIndex > 0) {
                 this.currentIndex--;
                 this.current = this.data[this.currentIndex];
