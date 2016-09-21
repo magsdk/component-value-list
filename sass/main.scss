@@ -1,11 +1,14 @@
 // @license The MIT License (MIT)
 // @copyright Stanislav Kalashnik <darkpark.main@gmail.com>
 
-/* mag-component-value-list: release */
-.component.valueList {
-    border: $inputBorder solid grey;
-    text-align: center;
-    &.focus {
-        border-color: orange;
+@import "body";
+@import "../node_modules/stb-component/sass/main";
+
+.mag-component-footer {
+    @include stb-component-release;
+    @include mag-component-value-list;
+
+    @if $DEVELOP {
+        @include stb-component-develop;
     }
 }

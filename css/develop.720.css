@@ -1,6 +1,13 @@
-/* mag-component-value-list: release */
-.component.valueList {
+.mag-component-footer {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
     border: 2px solid grey;
-    text-align: center; }
-    .component.valueList.focus {
+    text-align: center;
+    outline: 1px dashed #005000;
+    outline-offset: -1px; }
+    .mag-component-footer.hidden {
+        display: none; }
+    .mag-component-footer.focus {
         border-color: orange; }
+    .mag-component-footer.focus {
+        outline: 1px dashed red; }

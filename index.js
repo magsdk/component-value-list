@@ -41,7 +41,7 @@ function ValueList ( config ) {
         if ( config.className && typeof config.className !== 'string' ) { throw new Error(__filename + ': wrong or empty config.className'); }
     }
 
-    config.className = 'valueList ' + (config.className || '');
+    //config.className = 'valueList ' + (config.className || '');
 
     /**
      * Component data
@@ -78,6 +78,9 @@ function ValueList ( config ) {
 // inheritance
 ValueList.prototype = Object.create(Component.prototype);
 ValueList.prototype.constructor = ValueList;
+
+// set component name
+ValueList.prototype.name = 'mag-component-value-list';
 
 
 /**
