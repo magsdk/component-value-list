@@ -2,9 +2,9 @@
 // @copyright Stanislav Kalashnik <darkpark.main@gmail.com>
 
 @mixin mag-component-value-list {
-  border: $inputBorder solid grey;
-  text-align: center;
-  &.focus {
-    border-color: orange;
-  }
+    border: $inputBorder solid grey;
+    text-align: center;
+    &.focus {
+        border-color: orange;
+    }
 }
