@@ -8,6 +8,4 @@
     .mag-component-value-list.hidden {
         display: none; }
     .mag-component-value-list.focus {
-        border-color: orange; }
-    .mag-component-value-list.focus {
         outline: 1px dashed red; }

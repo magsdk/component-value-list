@@ -4,7 +4,7 @@
 @mixin mag-component-value-list {
     border: $inputBorder solid grey;
     text-align: center;
-    &.focus {
-        border-color: orange;
-    }
+    //&.focus {
+    //    border-color: orange;
+    //}
 }
