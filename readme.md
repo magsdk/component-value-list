@@ -20,10 +20,22 @@ npm install mag-component-value-list
 
 ## Usage ##
 
-Add the singleton to the scope:
+Add the constructor to the scope:
 
 ```js
-var list = require('mag-component-value-list');
+var ValueList = require('mag-component-value-list');
+```
+
+Create scroll area instance:
+
+```js
+var valueList = new ValueList({
+    data: [11, 22, 35, 56, 78],
+    cycle: true,
+    render: function ( $body ) {
+        $body.innerText = 'Number: ' + this.current.value;
+    }
+});
 ```
 
 

@@ -10,6 +10,7 @@
 var Component = require('stb-component'),
     keys      = require('stb-keys');
 
+
 /**
  * Value list implementation
  *
@@ -20,16 +21,6 @@ var Component = require('stb-component'),
  * @param {Array} [config.data] data to display
  * @param {function} [config.render] function to render data
  * @param {number} [config.index] index of start position to display data
- *
- * @example
- * var ValueList = require('../stb/ui/value.list'),
- *     newList = new ValueList({
- *         data: [11, 22, 35, 56, 78],
- *         cycle: true,
- *         render: function ( $body ) {
- *             $body.innerText = 'Number: ' + this.current.value;
- *         }
- *         });
  */
 function ValueList ( config ) {
 
