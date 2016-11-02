@@ -1,6 +1,6 @@
 {
     "name": "mag-component-value-list",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Base value list implementation.",
     "author": {
         "name": "Stanislav Kalashnik",
