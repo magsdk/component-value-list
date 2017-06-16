@@ -79,9 +79,45 @@ ValueList.prototype.name = 'mag-component-value-list';
 
 
 /**
+ * Make all the data items identical.
+ * Wrap to objects if necessary.
+ *
+ * @param {Array} data incoming array
+ * @return {Array} reworked incoming data
+ */
+function normalize ( data ) {
+    var index, item;
+
+    if ( DEVELOP ) {
+        if ( arguments.length !== 1 ) {
+            throw new Error(__filename + ': wrong arguments number');
+        }
+        if ( !Array.isArray(data) ) {
+            throw new Error(__filename + ': wrong data type');
+        }
+    }
+
+    // rows
+    for ( index = 0; index < data.length; index++ ) {
+        // cell value
+        item = data[index];
+        // primitive value
+        if ( typeof item !== 'object' ) {
+            // wrap with defaults
+            item = data[index] = {
+                value: data[index]
+            };
+        }
+    }
+
+    return data;
+}
+
+
+/**
  * Init or reinit component
  *
- * @param {object} config of component
+ * @param {Object} config of component
  */
 ValueList.prototype.init = function ( config ) {
 
@@ -148,7 +184,7 @@ ValueList.prototype.updateData = function () {
      * @type {Object}
      * @property {object} current data
      */
-    this.emit('data:change', {current:this.current});
+    this.emit('data:change', {current: this.current});
 };
 
 
@@ -198,7 +234,7 @@ ValueList.prototype.change = function ( direction ) {
                     this.current = this.data[0];
                     this.updateData();
                 }
-                this.emit('overflow', {direction:direction, cycle:this.cycle});
+                this.emit('overflow', {direction: direction, cycle: this.cycle});
             }
             break;
         case keys.up:
@@ -212,46 +248,11 @@ ValueList.prototype.change = function ( direction ) {
                     this.current = this.data[this.currentIndex];
                     this.updateData();
                 }
-                this.emit('overflow', {direction:direction, cycle:this.cycle});
+                this.emit('overflow', {direction: direction, cycle: this.cycle});
             }
             break;
     }
 };
 
-
-/**
- * Make all the data items identical.
- * Wrap to objects if necessary.
- *
- * @param {Array} data incoming array
- * @return {Array} reworked incoming data
- */
-function normalize ( data ) {
-    var i, item;
-
-    if ( DEVELOP ) {
-        if ( arguments.length !== 1 ) {
-            throw new Error(__filename + ': wrong arguments number');
-        }
-        if ( !Array.isArray(data) ) {
-            throw new Error(__filename + ': wrong data type');
-        }
-    }
-
-    // rows
-    for ( i = 0; i < data.length; i++ ) {
-        // cell value
-        item = data[i];
-        // primitive value
-        if ( typeof item !== 'object' ) {
-            // wrap with defaults
-            item = data[i] = {
-                value: data[i]
-            };
-        }
-    }
-
-    return data;
-}
 
 module.exports = ValueList;
