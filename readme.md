@@ -26,7 +26,7 @@ Add the constructor to the scope:
 var ValueList = require('mag-component-value-list');
 ```
 
-Create scroll area instance:
+Create value list instance:
 
 ```js
 var valueList = new ValueList({
@@ -34,8 +34,20 @@ var valueList = new ValueList({
     cycle: true,
     render: function ( $body ) {
         $body.innerText = 'Number: ' + this.current.value;
+    },
+    events: {
+        // current state was changed
+        'data:change': function ( event ) {
+            console.log(event);
+        }
     }
 });
+```
+
+To get current state:
+
+```js
+console.log(valueList.current);
 ```
 
 
